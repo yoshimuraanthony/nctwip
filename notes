@@ -27,14 +27,16 @@ klein nishina formula
 
 # point 1: nuclear scattering (phonon and sputtering)
 Mott Scattering
-displacement threhold
-* PE
-* PDMS
+displacement cross section plots: PE, PDMS, MoS2, hBN
 
 # transition:
 # point 2: electron scattering (excitation and ionization)
+Moller Scattering
+scatter plots: PE, PDMS, MoS2, hBN
 # transition: a more concrete example
 # point 3: electronic excitations dramatically accelerate sputtering
+Excitation-assisted discplacement cross section plots: MoS2, hBN
+Compare ground and excited DXS
 
 # review:
 # conlusion:
