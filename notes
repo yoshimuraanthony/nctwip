@@ -3,23 +3,36 @@
 title: Quantum model for gamma radiation damamge
 
 # attention getter: A way to lead the audience to the need efficiently
+The weapon's been in the stopckpile for decades. 
 Have the material properties changed?
 # Context: what do the readers need to know to understand the need?
-Ballistic electrons produce damage
+Under Gamma radiation,
+ballistic electrons produce damage and change material properties
 # need: A difference between actual and desired situations
 We aim to model continuous material properties under years of radiation
 but...
 Defects are produced instantaneously at the subatomic scale
 # task: What I decided/was asked to do to address the need
 Develop a predictive quantum mechanical picture of how electrons interact with
-subatomic material particles
+subatomic material particles (electrons and nuclei)
 # main message: The one sentence I want my audience to remember
-Electronic excitations are important to consider
+We must consider both nuclear and electron scattering to properly describe the
+effects of radiation
 # preview: A map of the body (ideally three points, max. five)
 
-# point 1:
+# prologue
+Intro to feynmann diagrams and QED interactions
+compton scattering
+klein nishina formula
+
+# point 1: nuclear scattering (phonon and sputtering)
+Mott Scattering
+displacement threhold
+* PE
+* PDMS
+
 # transition:
-# point 2: excitation probabilities
+# point 2: electron scattering (excitation and ionization)
 # transition: a more concrete example
 # point 3: electronic excitations dramatically accelerate sputtering
 
