@@ -1,0 +1,29 @@
+# outline
+
+title: Quantum model for gamma radiation damamge
+
+# attention getter: A way to lead the audience to the need efficiently
+Have the material properties changed?
+# Context: what do the readers need to know to understand the need?
+Ballistic electrons produce damage
+# need: A difference between actual and desired situations
+We aim to model continuous material properties under years of radiation
+but...
+Defects are produced instantaneously at the subatomic scale
+# task: What I decided/was asked to do to address the need
+Develop a predictive quantum mechanical picture of how electrons interact with
+subatomic material particles
+# main message: The one sentence I want my audience to remember
+Electronic excitations are important to consider
+# preview: A map of the body (ideally three points, max. five)
+
+# point 1:
+# transition:
+# point 2: excitation probabilities
+# transition: a more concrete example
+# point 3: electronic excitations dramatically accelerate sputtering
+
+# review:
+# conlusion:
+# close:
+
