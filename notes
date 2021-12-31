@@ -60,6 +60,7 @@ plots: scatter: PE, PDMS, MoS2, hBN
 PE as an example:
 * band gap of ~6 eV
 * probabilities of most likely transitions decrease with increasing t-energy
+* this means we can ignore ionization and core excitations
 * direct transitions are more likely than indirect transitions
 * The probabilities of direct transitions are insensitive to e-energy
 * PDMS transitions are more likely
@@ -69,12 +70,15 @@ PE as an example:
 # point 3: electronic excitations dramatically accelerate sputtering
 excitations reduce binding energy
 degree of bond softening depends on number of excitations
-probabililty curves
+probability curves
 Excitation-assisted displacement cross section plots: MoS2, hBN
 Compare ground and excited DXS
 
 # review: A recap of the body, leading into the conclusion
-# conlusion: What the above means to the audience in the end
+We've shown that the effects of radiation damage can be described properly only
+if both nuclear and electronic scattering is considered
+# conclusion: What the above means to the audience in the end
+We have a way to predict the rates of atomic displacement under
 # close: A way to end the presentation clearly and elegantly
 
 # slide design ----------------------------------------------------------------
