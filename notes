@@ -62,10 +62,14 @@ PE as an example:
 * probabilities of most likely transitions decrease with increasing t-energy
 * direct transitions are more likely than indirect transitions
 * The probabilities of direct transitions are insensitive to e-energy
-* PDMS
+* PDMS transitions are more likely
+* hBN and MoS2
 
 # transition: a more concrete example
 # point 3: electronic excitations dramatically accelerate sputtering
+excitations reduce binding energy
+degree of bond softening depends on number of excitations
+probabililty curves
 Excitation-assisted displacement cross section plots: MoS2, hBN
 Compare ground and excited DXS
 
