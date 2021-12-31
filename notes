@@ -1,9 +1,9 @@
-# outline
+# outline --------------------------------------------------------------------
 
-title: Quantum model for gamma radiation damamge
+title: A Quantum model for gamma radiation damage
 
 # attention getter: A way to lead the audience to the need efficiently
-The weapon's been in the stopckpile for decades. 
+The weapon's been in the stockpile for decades. 
 Have the material properties changed?
 # Context: what do the readers need to know to understand the need?
 Under Gamma radiation,
@@ -21,24 +21,39 @@ effects of radiation
 # preview: A map of the body (ideally three points, max. five)
 
 # prologue
-Intro to feynmann diagrams and QED interactions
-compton scattering
-klein nishina formula
+Intro to Feynman diagrams and scattering
+* A scattering event is an event that changes the trajectories of a set of
+  particles
+* such an event can be represented pictorially by a Feynman diagram
+* the most likely event is that containing
+* segments and vertices represent amplitudes for particle propagation and
+  interaction
+* The amplitude of a scattering event is the product of the amplitudes of the
+  processes that make up the event's diagram.
+
+Compton scattering
+plots: Klein-Nishina formula
 
 # point 1: nuclear scattering (phonon and sputtering)
 Mott Scattering
-displacement cross section plots: PE, PDMS, MoS2, hBN
+plots: displacement cross section PE, PDMS, MoS2, hBN
 
 # transition:
 # point 2: electron scattering (excitation and ionization)
 Moller Scattering
-scatter plots: PE, PDMS, MoS2, hBN
+plots: scatter: PE, PDMS, MoS2, hBN
+
 # transition: a more concrete example
 # point 3: electronic excitations dramatically accelerate sputtering
-Excitation-assisted discplacement cross section plots: MoS2, hBN
+Excitation-assisted displacement cross section plots: MoS2, hBN
 Compare ground and excited DXS
 
-# review:
-# conlusion:
-# close:
+# review: A recap of the body, leading into the conclusion
+# conlusion: What the above means to the audience in the end
+# close: A way to end the presentation clearly and elegantly
 
+# slide design ----------------------------------------------------------------
+
+title
+va: middle
+position: x=.9, y=.5 (from top left)
