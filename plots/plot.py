@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from inspect import stack
 
 # eIrrad modules
 from eIrrad.plotScatter import ScatterPlot
@@ -21,19 +22,79 @@ PDMSpinfile = f'{PDMSdir}/{pinfile}'
 PDMSkinfile = f'{PDMSdir}/{kinfile}'
 PDMSexroot = f'{PDMSdir}/tmp/hBN.export'
 
+def scatterZoomLinPEPDMS(
+        outfile = 'auto',
+        markersize = 10,
+        ):
+    """Two colors: PE and PDMS."""
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving as {outfile}')
+
+    plot = ScatterPlot(forslides=True, clip_on=True, logy=False)
+    plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
+    plot.plot(transition='all', color='tab:blue', markersize=markersize,
+            label='PE', zorder=3)
+    plot.readData(pinfile=PDMSpinfile, kinfile=PDMSkinfile, top=PDMSdir)
+    plot.plot(transition='all', color='tab:orange', markersize=markersize,
+            label='PDMS', zorder=2)
+    plot.decorate(title=None, grid=False, legend=False,
+            xlim=(4, 16), xticks=(4, 10, 16),
+            ylim=(1, 20), yticks=(1, 10, 20),
+            ylabel='probability density ($\AA^6$)')
+    plot.save(outfile=outfile)
+    plot.show()
+
+def scatterZoomPEPDMS(
+        outfile = 'scatterZoomPEPDMS.png',
+        markersize = 10,
+        ):
+    """Two colors: PE and PDMS."""
+    plot = ScatterPlot(forslides=True, clip_on=True)
+    plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
+    plot.plot(transition='all', color='tab:blue', markersize=markersize,
+            label='PE', zorder=3)
+    plot.readData(pinfile=PDMSpinfile, kinfile=PDMSkinfile, top=PDMSdir)
+    plot.plot(transition='all', color='tab:orange', markersize=markersize,
+            label='PDMS', zorder=2)
+    plot.decorate(title=None, grid=False, legend=False,
+            xlim=(4, 16), xticks=(4, 10, 16),
+            ylim=(1, 1e2), yticks=(1, 10, 100),
+            ylabel='probability density ($\AA^6$)')
+    plot.save(outfile=outfile)
+    plot.show()
+
+def scatterPEPDMS(
+        outfile = 'scatterPEPDMS.png',
+        markersize = 2,
+        ):
+    """Two colors: PE and PDMS."""
+    plot = ScatterPlot(forslides=True)
+    plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
+    plot.plot(transition='all', color='tab:blue', markersize=markersize,
+            label='PE', zorder=3)
+    plot.readData(pinfile=PDMSpinfile, kinfile=PDMSkinfile, top=PDMSdir)
+    plot.plot(transition='all', color='tab:green', markersize=markersize,
+            label='PDMS', zorder=4)
+    plot.decorate(title=None, grid=False, legend=False,
+            xlim=(0, 36), xticks=(0, 18, 36),
+            ylim=(1e-18, 1e2), yticks=(1e-18, 1e-8, 1e2),
+            ylabel='probability density ($\AA^6$)')
+    plot.save(outfile=outfile)
+    plot.show()
+
 def scatterDirPE(
         outfile = 'scatterDirPE.png',
         markersize = 2,
-        title = 'Polyethylene (PE)',
         ):
-    """One color, all points."""
+    """Two colors: direct and indirect."""
     plot = ScatterPlot(forslides=True)
     plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
     plot.plot(transition='direct', color='tab:orange', markersize=markersize,
             label='direct', zorder=3)
     plot.plot(transition='indirect', color='tab:blue', markersize=markersize,
             label='indirect', zorder=2)
-    plot.decorate(title=title, grid=False, legend=False,
+    plot.decorate(title=None, grid=False, legend=False,
             xlim=(0, 36), xticks=(0, 18, 36),
             ylim=(1e-19, 10), yticks=(1e-19, 1e-9, 10),
             ylabel='probability density ($\AA^6$)')
@@ -43,7 +104,6 @@ def scatterDirPE(
 def scatterDirPDMS(
         outfile = 'scatterDirPDMS.png',
         markersize = 2,
-        title = 'Polydimethylsiloxane (PDMS)',
         ):
     """One color, all points."""
     plot = ScatterPlot(forslides=True)
@@ -52,7 +112,7 @@ def scatterDirPDMS(
             label='direct', zorder=3)
     plot.plot(transition='indirect', color='tab:blue', markersize=markersize,
             label='indirect', zorder=2)
-    plot.decorate(title=title, grid=False, legend=False,
+    plot.decorate(title=None, grid=False, legend=False,
             xlim=(0, 30), xticks=(0, 15, 30),
             ylabel='probability density ($\AA^6$)')
     plot.save(outfile=outfile)
@@ -61,13 +121,12 @@ def scatterDirPDMS(
 def scatterPE(
         outfile = 'scatterPE.png',
         markersize = 2,
-        title = 'Polyethylene (PE)',
         ):
     """One color, all points."""
     plot = ScatterPlot(forslides=True)
     plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
     plot.plot(markersize=markersize)
-    plot.decorate(title=title, grid=False, legend=False,
+    plot.decorate(title=None, grid=False, legend=False,
             xlim=(0, 36), xticks=(0, 18, 36),
 #             xlim=(5, 35), xticks=(5, 20, 35),
 #             xlim=(0, 36), xticks=(0, 6, 36),
@@ -79,15 +138,47 @@ def scatterPE(
 def scatterPDMS(
         outfile = 'scatterPDMS.png',
         markersize = 2,
-        title = 'Polydimethylsiloxane (PDMS)',
         ):
     """One color, all points."""
     plot = ScatterPlot(forslides=True)
     plot.readData(pinfile=PDMSpinfile, kinfile=PDMSkinfile, top=PDMSdir)
     plot.plot(markersize=markersize)
-    plot.decorate(title=title, grid=False, legend=False,
+    plot.decorate(title=None, grid=False, legend=False,
             xlim=(0, 30), xticks=(0, 15, 30),
 #             xlim=(4, 30), xticks=(4, 30),
+            ylim=(1e-12, 1e2), yticks=(1e-12, 1e-5, 1e2),
+            ylabel='probability density ($\AA^6$)')
+    plot.save(outfile=outfile)
+    plot.show()
+
+def scatterLinPE(
+        outfile = 'scatterLinPE.png',
+        markersize = 2,
+        ):
+    """One color, all points."""
+    plot = ScatterPlot(forslides=True, logy=False)
+    plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
+    plot.plot(markersize=markersize)
+    plot.decorate(title=None, grid=False, legend=False,
+            xlim=(0, 36), xticks=(0, 18, 36),
+#             xlim=(5, 35), xticks=(5, 20, 35),
+#             xlim=(0, 36), xticks=(0, 6, 36),
+            ylim=(0, 10), yticks=(0, 5, 10),
+            ylabel='probability density ($\AA^6$)')
+    plot.save(outfile=outfile)
+    plot.show()
+
+def scatterLinPDMS(
+        outfile = 'scatterLinPDMS.png',
+        markersize = 2,
+        ):
+    """One color, all points."""
+    plot = ScatterPlot(forslides=True, logy=False)
+    plot.readData(pinfile=PDMSpinfile, kinfile=PDMSkinfile, top=PDMSdir)
+    plot.plot(markersize=markersize)
+    plot.decorate(title=None, grid=False, legend=False,
+            xlim=(0, 30), xticks=(0, 15, 30),
+            ylim=(0, 30), yticks=(0, 15, 30),
             ylabel='probability density ($\AA^6$)')
     plot.save(outfile=outfile)
     plot.show()
@@ -95,7 +186,6 @@ def scatterPDMS(
 def scattermaxPE(
         outfile='scattermax.png',
         markersize=2,
-        title='Polyethylene',
         maxlabel='direct band-edge\ntransition at X',
         ):
     """"""
@@ -104,7 +194,6 @@ def scattermaxPE(
 def scattermaxPDMS(
         outfile='scattermax.png',
         markersize=2,
-        title='Polydimethylsiloxane',
         maxlabel='direct band-edge\ntransition at S',
         ):
     """"""
