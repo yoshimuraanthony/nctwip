@@ -33,7 +33,8 @@ We will consider
 Intro to Feynman diagrams and scattering
 * A scattering event is an event that changes the trajectories of a set of
   particles
-* Example: Compton scattering is the scattering of (non-specified interaction circle)
+* Example: Compton scattering is the scattering of (non-specified interaction
+  circle
 * incoming states are time evolved by T and overlapped with outgoing states
 * such an event can be represented pictorially by a Feynman diagram
 * building blocks: segments and vertices represent amplitudes for particle
@@ -85,6 +86,10 @@ if both nuclear and electronic scattering is considered
 # conclusion: What the above means to the audience in the end
 We have a way to predict the rates of atomic displacement under
 # close: A way to end the presentation clearly and elegantly
+Many process of interest are mediated by subatomic particle interactions, many
+of which involve electrons
+There is a need to connect very disparate length and time scales
+In my humble opinion, there is a great opportunity to be made
 
 # slide design ----------------------------------------------------------------
 
