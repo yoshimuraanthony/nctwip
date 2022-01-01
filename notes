@@ -1,6 +1,7 @@
 # to do -----------------------------------------------------------------------
 
 outline slide
+need to clarify: sigma or amplitude?
 
 # outline --------------------------------------------------------------------
 
@@ -37,8 +38,9 @@ Intro to Feynman diagrams and scattering
 * such an event can be represented pictorially by a Feynman diagram
 * building blocks: segments and vertices represent amplitudes for particle
   propagation and interaction
-  * see p.145 in Peskin, or p.350 lancaster
+  * see p.1{18,45} in Peskin, or p.3{45,50} lancaster
 * each segment/vertex corresponds to a matrix/vector object
+* certain combinations can connect the incoming and outgoing states
 * The amplitude of a scattering event is the product of the amplitudes of the
   processes that make up the event's diagram.
 * the most likely events are those containing the fewest vertices
@@ -48,14 +50,17 @@ Intro to Feynman diagrams and scattering
 plots: Klein-Nishina formula (d\sigma/dE)
 
 # point 1: nuclear scattering (phonon and sputtering)
-Mott Scattering
+Rutherford Scattering
 Feynman diagram
-integrate
+get the differential cross section w.r.t. energy transfer
+integrate over energy transfers greater than the binding energy
 plots: displacement cross section PE, PDMS, MoS2, hBN
 
 # transition:
 # point 2: electron scattering (excitation and ionization)
 Moller Scattering
+Feynman diagram
+get the probability density w.r.t. momentum
 plots: scatter: PE, PDMS, MoS2, hBN
 PE as an example:
 * band gap of ~6 eV
@@ -86,3 +91,8 @@ We have a way to predict the rates of atomic displacement under
 title
 va: middle
 position: x=.9, y=.5 (from top left)
+
+diagrams:
+curve height = .67"
+arrow height = .5"
+arrow width = .5"
