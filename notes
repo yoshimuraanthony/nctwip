@@ -11,76 +11,70 @@ title: A Quantum model for gamma radiation damage
 The weapon's been in the stockpile for decades. 
 Have the material properties changed?
 # Context: what do the readers need to know to understand the need?
-Under Gamma radiation,
-ballistic electrons produce damage and change material properties
+# plots: Klein-Nishina formula (d\sigma/dE)
+Under Gamma radiation, a gamma photon can boost a ballistic electron to a large
+range of energies
+* ballistic electrons produce damage and change material
+  properties
+* damage involves the displacement of nuclei, not electrons (metastable states
+  are quite rare)
+* Rutherford Scattering
+* get the differential cross section w.r.t. energy transfer
+* integrate over energy transfers greater than the binding energy
+* plots: displacement cross section PE, PDMS
+* 2D materials provide an excellent platform to test this theory
 # need: A difference between actual and desired situations
-We aim to model continuous material properties under years of radiation
-but...
-Defects are produced instantaneously at the subatomic scale
+* plots: displacement cross section MoS2, hBN
+  * agreement with experiment is not so good
+  1. non-radiative decay
+  2. bond softening
 # task: What I decided/was asked to do to address the need
-Develop a predictive quantum mechanical picture of how ballistic electrons
-interact with subatomic material particles (electrons and nuclei)
+* This model is missing something: electronic excitation can affect nuclear
+  dynamics.
+* Develop a predictive quantum mechanical picture of how ballistic electrons
+  interact with subatomic material particles (electrons and nuclei)
 # main message: The one sentence I want my audience to remember
-These electron interactions with material nuclei and electrons must be
-considered to properly describe the effects of radiation
-Quantum mechanics, specifically, quantum electrodynamics, provides an
-intuitive, feasible, and predictive means of doing so.
+* These electron interactions with material nuclei and electrons must be
+  considered to properly describe the effects of radiation
+* As the name suggests, quantum electrodynamics provides an intuitive, feasible,
+  and predictive means of doing so.
+
 # preview: A map of the body (ideally three points, max. five)
-We will consider
-* electron-nuclear
-* electron-electron
-* the coupling of both
-
-# prologue
-Intro to Feynman diagrams and scattering
-* A scattering event is an event that changes the trajectories of a set of
-  particles
-* Example: Compton scattering is the scattering of (non-specified interaction
-  circle
-* incoming states are time evolved by T and overlapped with outgoing states
-* such an event can be represented pictorially by a Feynman diagram
-* building blocks: segments and vertices represent amplitudes for particle
-  propagation and interaction
-  * see p.1{18,45} in Peskin, or p.3{45,50} lancaster
-* each segment/vertex corresponds to a matrix/vector object
-* certain combinations can connect the incoming and outgoing states
-* The amplitude of a scattering event is the product of the amplitudes of the
-  processes that make up the event's diagram.
-* the most likely events are those containing the fewest vertices
-* turn diagram into amplitude
-* differentiate with respect to a particular variable
-
-plots: Klein-Nishina formula (d\sigma/dE)
-
-# point 1: nuclear scattering (phonon and sputtering)
-Rutherford Scattering
-Feynman diagram
-get the differential cross section w.r.t. energy transfer
-integrate over energy transfers greater than the binding energy
-plots: displacement cross section PE, PDMS, MoS2, hBN
+1. non-radiative decay
+2. bond softening
 
 # transition:
-# point 2: electron scattering (excitation and ionization)
-Moller Scattering
-Feynman diagram
-get the probability density w.r.t. momentum
-plots: scatter: PE, PDMS, MoS2, hBN
-PE as an example:
-* band gap of ~6 eV
-* probabilities of most likely transitions decrease with increasing t-energy
-* this means we can ignore ionization and core excitations
-* direct transitions are more likely than indirect transitions
-* The probabilities of direct transitions are insensitive to e-energy
+# point 1: non-radiative decay excites nuclear vibrations
+# plots: scatter: PE, PDMS, MoS2, hBN
+* non radiative relaxation couples to the phonons
+* The amount of energy contributed and the modes excited depend on the specific
+  excitation
+  * images: band diagram and bond excitations
+* Moller Scattering
+  * images: Feynman diagram and amplitudes
+* get the probability density w.r.t. crystal momentum
+* PE as an example:
+  * band gap of ~6 eV
+  * probabilities of most likely transitions decrease with increasing t-energy
+  * this means we can ignore ionization and core excitations
+  * direct transitions are more likely than indirect transitions
+* The probabilities of direct transitions are insensitive to ballistic electron
+  energy
 * PDMS transitions are more likely
 * hBN and MoS2
 
-# transition: a more concrete example
-# point 3: electronic excitations dramatically accelerate sputtering
-excitations reduce binding energy
-degree of bond softening depends on number of excitations
-probability curves
-Excitation-assisted displacement cross section plots: MoS2, hBN
-Compare ground and excited DXS
+# transition: 
+# point 2: electronic excitations dramatically accelerate sputtering
+* Binding energies are reduced while electrons are excited
+* excited electron will eventually relax
+* if radiative lifetime is longer than a few hundred femto seconds, then
+  electronic excitations can reduce the binding energy.
+* degree of bond softening depends on number of excitations
+* probability curves
+* Excitation-assisted displacement cross section plots: MoS2, hBN
+  * show contribution of each excitation next to dxs plot
+* compare with experiment
+* Compare ground and excited DXS
 
 # review: A recap of the body, leading into the conclusion
 We've shown that the effects of radiation damage can be described properly only
@@ -92,6 +86,9 @@ Many process of interest are mediated by subatomic particle interactions, many
 of which involve electrons
 There is a need to connect very disparate length and time scales
 In my humble opinion, there is a great opportunity to be made
+We aim to model continuous material properties under years of radiation
+but...
+Defects are produced instantaneously at the subatomic scale
 
 # slide design ----------------------------------------------------------------
 
