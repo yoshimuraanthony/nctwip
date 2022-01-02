@@ -37,6 +37,7 @@ and predictive means of doing so.
 * integrate over energy transfers greater than the binding energy
 * plots: displacement cross section PE, PDMS
 * 2D materials provide an excellent platform to test this theory
+# need: A difference between actual and desired situations
 * plots: displacement cross section MoS2, hBN
   * agreement with experiment is not so good
 * This model is missing something: electronic excitation can affect nuclear
