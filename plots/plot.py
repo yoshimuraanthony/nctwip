@@ -3,6 +3,7 @@ from inspect import stack
 
 # eIrrad modules
 from eIrrad.plotScatter import ScatterPlot
+from eIrrad.plotBar import BarPlot
 
 # constants, unit conversions, and dictionaries
 from constants import *
@@ -22,6 +23,58 @@ PDMSpinfile = f'{PDMSdir}/{pinfile}'
 PDMSkinfile = f'{PDMSdir}/{kinfile}'
 PDMSexroot = f'{PDMSdir}/tmp/hBN.export'
 
+def barPEPDMS(
+        number = 5,
+        outfile = 'auto',
+        ):
+    """Most likely transitions."""
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving to {outfile}')
+
+    plot = BarPlot(forslides=True)
+    plot.readData(pinfile=PDMSpinfile, kinfile=PDMSkinfile, top=PDMSdir)
+    plot.addBars(mode='number', number=number, color='tab:green')
+    plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
+    plot.addBars(mode='number', number=number, color='tab:blue')
+    plot.plot()
+    plot.decorate(title=None)
+    plot.save(outfile=outfile)
+    plot.show()
+
+def barPE(
+        include = .01,
+        outfile = 'auto',
+        ):
+    """Most likely transitions."""
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving to {outfile}')
+
+    plot = BarPlot(forslides=True)
+    plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
+    plot.addBars(include=include)
+    plot.plot()
+    plot.decorate()
+    plot.save(outfile=outfile)
+    plot.show()
+        
+def barPDMS(
+        include = .01,
+        outfile = 'auto',
+        ):
+    """Most likely transitions."""
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving to {outfile}')
+
+    plot = BarPlot(forslides=True)
+    plot.readData(pinfile=PDMSpinfile, kinfile=PDMSkinfile, top=PDMSdir)
+    plot.plot(include=include)
+    plot.decorate()
+    plot.save(outfile=outfile)
+    plot.show()
+
 def scatterZoomLinPEPDMS(
         outfile = 'auto',
         markersize = 10,
@@ -29,7 +82,7 @@ def scatterZoomLinPEPDMS(
     """Two colors: PE and PDMS."""
     if outfile=='auto':
         outfile = f'{stack()[0].function}.png'
-    print(f'saving as {outfile}')
+    print(f'saving to {outfile}')
 
     plot = ScatterPlot(forslides=True, clip_on=True, logy=False)
     plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
@@ -153,7 +206,7 @@ def scatterPDMS(
 
 def scatterLinPE(
         outfile = 'scatterLinPE.png',
-        markersize = 2,
+        markersize = 6,
         ):
     """One color, all points."""
     plot = ScatterPlot(forslides=True, logy=False)
@@ -170,7 +223,7 @@ def scatterLinPE(
 
 def scatterLinPDMS(
         outfile = 'scatterLinPDMS.png',
-        markersize = 2,
+        markersize = 6,
         ):
     """One color, all points."""
     plot = ScatterPlot(forslides=True, logy=False)
