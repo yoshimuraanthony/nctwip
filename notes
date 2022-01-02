@@ -11,25 +11,11 @@ title: A Quantum model for gamma radiation damage
 The weapon's been in the stockpile for decades. 
 Have the material properties changed?
 # Context: what do the readers need to know to understand the need?
-Under Gamma radiation,
-ballistic electrons produce damage and change material properties
-# need: A difference between actual and desired situations
-We aim to model continuous material properties under years of radiation
-but...
-Defects are produced instantaneously at the subatomic scale
-# task: What I decided/was asked to do to address the need
-Develop a predictive quantum mechanical picture of how ballistic electrons
-interact with subatomic material particles (electrons and nuclei)
-# main message: The one sentence I want my audience to remember
-These electron interactions with material nuclei and electrons must be
-considered to properly describe the effects of radiation
-As the name suggests, quantum electrodynamics provides an intuitive, feasible,
-and predictive means of doing so.
-
-# background
 # plots: Klein-Nishina formula (d\sigma/dE)
-* A gamma photon can boost a ballistic electron to a large range of energies
-  * plots: Klein-Nishina formula (d\sigma/dE)
+Under Gamma radiation, a gamma photon can boost a ballistic electron to a large
+range of energies
+* ballistic electrons produce damage and change material
+  properties
 * damage involves the displacement of nuclei, not electrons (metastable states
   are quite rare)
 * Rutherford Scattering
@@ -40,12 +26,18 @@ and predictive means of doing so.
 # need: A difference between actual and desired situations
 * plots: displacement cross section MoS2, hBN
   * agreement with experiment is not so good
-* This model is missing something: electronic excitation can affect nuclear
-  dynamics.
   1. non-radiative decay
   2. bond softening
-    * while the electrons are excited, they reduce the binding energy
-  * excited electron will eventually relax
+# task: What I decided/was asked to do to address the need
+* This model is missing something: electronic excitation can affect nuclear
+  dynamics.
+* Develop a predictive quantum mechanical picture of how ballistic electrons
+  interact with subatomic material particles (electrons and nuclei)
+# main message: The one sentence I want my audience to remember
+* These electron interactions with material nuclei and electrons must be
+  considered to properly describe the effects of radiation
+* As the name suggests, quantum electrodynamics provides an intuitive, feasible,
+  and predictive means of doing so.
 
 # preview: A map of the body (ideally three points, max. five)
 1. non-radiative decay
@@ -73,6 +65,8 @@ and predictive means of doing so.
 
 # transition: 
 # point 2: electronic excitations dramatically accelerate sputtering
+* Binding energies are reduced while electrons are excited
+* excited electron will eventually relax
 * if radiative lifetime is longer than a few hundred femto seconds, then
   electronic excitations can reduce the binding energy.
 * degree of bond softening depends on number of excitations
@@ -92,6 +86,9 @@ Many process of interest are mediated by subatomic particle interactions, many
 of which involve electrons
 There is a need to connect very disparate length and time scales
 In my humble opinion, there is a great opportunity to be made
+We aim to model continuous material properties under years of radiation
+but...
+Defects are produced instantaneously at the subatomic scale
 
 # slide design ----------------------------------------------------------------
 
