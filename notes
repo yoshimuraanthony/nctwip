@@ -1,7 +1,12 @@
 # to do -----------------------------------------------------------------------
 
-outline slide
-need to clarify: sigma or amplitude?
+plotDXS with various contributions
+fix clip_on and outfile numbering for dxsContr
+
+# possible titles ------------------------------------------------------------
+
+How does long-term radiation exposure change device performace?
+How does long-term radiation exposure change material properties?
 
 # outline --------------------------------------------------------------------
 
@@ -25,26 +30,25 @@ range of energies
 * 2D materials provide an excellent platform to test this theory
 # need: A difference between actual and desired situations
 * plots: displacement cross section MoS2, hBN
-  * agreement with experiment is not so good
-  1. non-radiative decay
-  2. bond softening
-# task: What I decided/was asked to do to address the need
+* agreement with experiment is not so good
 * This model is missing something: electronic excitation can affect nuclear
   dynamics.
+# task: What I decided/was asked to do to address the need
 * Develop a predictive quantum mechanical picture of how ballistic electrons
   interact with subatomic material particles (electrons and nuclei)
 # main message: The one sentence I want my audience to remember
-* These electron interactions with material nuclei and electrons must be
-  considered to properly describe the effects of radiation
-* As the name suggests, quantum electrodynamics provides an intuitive, feasible,
+* These electron interactions with material electrons must be considered to
+  properly describe the effects of radiation
+* As the name suggests, quantum electrodynamics provides an intuitive, tractable,
   and predictive means of doing so.
 
 # preview: A map of the body (ideally three points, max. five)
-1. non-radiative decay
-2. bond softening
+There are two ways in which 
+1. relaxation: when excited electrons relax, they impart energy to the nuclei
+2. bond softening: while excited, bonds are weakened, promoting more damge
 
 # transition:
-# point 1: non-radiative decay excites nuclear vibrations
+# point 1: non-radiative relaxation excites nuclear vibrations
 # plots: scatter: PE, PDMS, MoS2, hBN
 * non radiative relaxation couples to the phonons
 * The amount of energy contributed and the modes excited depend on the specific
