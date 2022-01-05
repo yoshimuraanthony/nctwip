@@ -13,6 +13,7 @@ from constants import *
 
 PEdir = "/p/lustre1/yoshia/radEffects/materials/PE/qe/kCon/07x02x01"
 PDMSdir = "/p/lustre1/yoshia/radEffects/materials/PDMS/qe/kCon/04x04x01"
+hBNdir = "/p/lustre1/yoshia/radEffects/materials/hBN/qe/Eb/050000/08x08x01"
 
 pinfile = 'newprob.txt'
 kinfile = 'kpts.txt'
@@ -22,6 +23,30 @@ PEexroot = f'{PEdir}/tmp/hBN.export'
 PDMSpinfile = f'{PDMSdir}/{pinfile}'
 PDMSkinfile = f'{PDMSdir}/{kinfile}'
 PDMSexroot = f'{PDMSdir}/tmp/hBN.export'
+hBNpinfile = f'{hBNdir}/{pinfile}'
+hBNkinfile = f'{hBNdir}/{kinfile}'
+hBNexroot = f'{hBNdir}/tmp/hBN.export'
+
+def scatterHBN(
+        outfile = 'auto',
+        markersize = 2,
+        ):
+    """One color."""
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving to {outfile}')
+
+    plot = ScatterPlot(forslides=True, clip_on=True, logy=True)
+    plot.readData(pinfile=hBNpinfile, kinfile=hBNkinfile, top=hBNdir)
+    plot.plot(transition='all', color='tab:blue', markersize=markersize,
+            label='hBN', zorder=3)
+    plot.decorate(title=None, grid=False, legend=False,
+            xlim=(0, 34), xticks=(0, 17, 34),
+            ylim=(1e-19, 1e1), yticks=(1e-19, 1e-9, 1e1),
+            ylabel='probability density ($\AA^6$)',
+            )
+    plot.save(outfile=outfile)
+    plot.show()
 
 def scatterZoomLinPEPDMS(
         outfile = 'auto',
