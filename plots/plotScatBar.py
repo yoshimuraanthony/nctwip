@@ -47,10 +47,14 @@ def scatterZoomLinPEPDMS(
     plot.show()
 
 def scatterZoomPEPDMS(
-        outfile = 'scatterZoomPEPDMS.png',
+        outfile = 'auto',
         markersize = 10,
         ):
     """Two colors: PE and PDMS."""
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving to {outfile}')
+
     plot = ScatterPlot(forslides=True, clip_on=True)
     plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
     plot.plot(transition='all', color='tab:blue', markersize=markersize,
@@ -66,10 +70,14 @@ def scatterZoomPEPDMS(
     plot.show()
 
 def scatterPEPDMS(
-        outfile = 'scatterPEPDMS.png',
+        outfile = 'auto',
         markersize = 2,
         ):
     """Two colors: PE and PDMS."""
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving to {outfile}')
+
     plot = ScatterPlot(forslides=True)
     plot.readData(pinfile=PEpinfile, kinfile=PEkinfile, top=PEdir)
     plot.plot(transition='all', color='tab:blue', markersize=markersize,

@@ -176,6 +176,61 @@ def dxsExpHBN(
     Plot.save(outfile)
     Plot.show()
 
+def dxsExpHBN_gro(
+        outfile = 'auto',
+        ebounds=[20,120],
+        Ed=12.85,
+        ):
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving to {outfile}')
+
+    Plot = DXSPlot(forslides=True, clip_on=False)
+    Plot.plot(classkey='temp', spec='B', Ed=Ed, ebounds=ebounds, label='boron')
+    Plot.ax.plot((30, 60, 60), (15, 18, 15), 's', color='white', markersize=7)
+    Plot.decorate(ylim=(0,32))
+    Plot.save(outfile)
+    Plot.show()
+
+def dxsHBN_gro(
+        outfile = 'auto',
+        ebounds=[20,120],
+        Ed=12.85,
+        ):
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving to {outfile}')
+
+    Plot = DXSPlot(forslides=True, clip_on=False)
+    Plot.plot(classkey='temp', spec='B', Ed=Ed, ebounds=ebounds, label='boron')
+    Plot.decorate(ylim=(0,32))
+    Plot.save(outfile)
+    Plot.show()
+
+def dxsExpHBN(
+        outfile = 'auto',
+        res = 100,
+        ylim = [0,40],
+        ):
+    """Plots excited and ground state hBN dxs with expimerntal points."""
+    if outfile=='auto':
+        outfile = f'{stack()[0].function}.png'
+    print(f'saving to {outfile}')
+
+    g_tdxs = TempDXS(spec='B', Ed=12.85, ebounds=[20,120])
+    g_dict = g_tdxs.getDict()
+    e_tdxs = ExciDXS(spec='B', Ed=12.85, ebounds=[21,120], res=res, tau=500)
+    e_dict = e_tdxs.getDict()
+
+    # expt data
+    Plot = DXSPlot(forslides=True, clip_on=False)
+    Plot.plot(dxs_dict=g_dict)
+    Plot.plot(dxs_dict=e_dict)
+    Plot.ax.plot((30, 60, 60), (15, 18, 15), 's', color='white', markersize=7)
+    Plot.decorate(xticks=[20, 120], yticks=ylim, ylim=ylim)
+    Plot.save(outfile)
+    Plot.show()
+
 #---------------------------------- SCRATCH ----------------------------------
 
 # def dxsPEC(outfile='auto'):
